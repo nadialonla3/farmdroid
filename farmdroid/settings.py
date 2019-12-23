@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Culture',
+    'rest_framework',
+    'django_filters',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +54,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'farmdroid.urls'
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
@@ -75,8 +81,12 @@ WSGI_APPLICATION = 'farmdroid.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'farmdroid',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',                     
+        'PORT': '3306',
     }
 }
 
@@ -118,3 +128,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    # 'DEFAULT_RENDERER_CLASSES': (
+    #     'rest_framework.renderers.JSONRenderer',
+    # ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'PAGE_SIZE': 100,
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+
+}
