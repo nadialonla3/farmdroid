@@ -27,15 +27,15 @@ class NoeudMaitre(models.Model):
 
 class NoeudCollecteur(models.Model):
     position = models.TextField()
-    noeudMaitre = models.ForeignKey(to=NoeudMaitre, on_delete=models.SET_NULL, null=True)
+    noeudMaitre = models.ForeignKey(to=NoeudMaitre, on_delete=models.SET_NULL, null=True, related_name='noeudsCollecteurs')
 
 class Sensor(models.Model):
     gpsCoordinateX= models.FloatField()
     gpsCoordinateY= models.FloatField()
     status=models.IntegerField()
     Type = models.ForeignKey(to=Type, on_delete=models.SET_NULL, null=True)
-    culture = models.ForeignKey(to=Culture, on_delete=models.SET_NULL, null=True)
-    noeudCollecteur = models.ForeignKey(to=NoeudCollecteur, on_delete=models.SET_NULL, null=True)
+    culture = models.ForeignKey(to=Culture, on_delete=models.SET_NULL, null=True, related_name='sensors')
+    noeudCollecteur = models.ForeignKey(to=NoeudCollecteur, on_delete=models.SET_NULL, null=True, related_name='sensors')
 
     def __str__(self):
         return self.status
@@ -53,14 +53,14 @@ class Actuator(models.Model):
     gpsCoordinateY= models.FloatField()
     status=models.IntegerField()
     type = models.TextField()
-    NoeudCollecteur = models.ForeignKey(to=NoeudCollecteur, on_delete=models.SET_NULL, null=True)
+    noeudCollecteur = models.ForeignKey(to=NoeudCollecteur, on_delete=models.SET_NULL, null=True, related_name='actuators')
 
 class ActuatorHistory(models.Model):
     date= models.DateTimeField()
-    Actuator = models.ForeignKey(to=Actuator, on_delete=models.SET_NULL, null=True)
+    Actuator = models.ForeignKey(to=Actuator, on_delete=models.SET_NULL, null=True, related_name='history')
 
 class ScheduledActuators(models.Model):
     date= models.DateTimeField()
     repeatInterval=models.IntegerField()
-    Timestamp = models.DateTimeField()
-    Actuator = models.ForeignKey(to=Actuator, on_delete=models.SET_NULL, null=True)
+    timestamp = models.DateTimeField()
+    actuator = models.ForeignKey(to=Actuator, on_delete=models.SET_NULL, null=True, related_name='scheduled')
