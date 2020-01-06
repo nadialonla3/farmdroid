@@ -20,5 +20,5 @@ from django.conf.urls import url, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('api-auth/', include('rest_framework.urls')),
-    path('', include('Culture.urls'))
+    path('', include('Cultures.urls'))
 ]
