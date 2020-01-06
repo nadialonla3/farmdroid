@@ -1,0 +1,38 @@
+#connexion {
+    margin-right:30px;
+}
+
+.board {
+    height: 100px;
+}
+.board-vertical {
+    background-color: rgba(129, 109, 160, 0.445);
+    color: white;
+}
+.board-horizontal {
+    background-color: rgba(129, 109, 160, 0.445);
+    color: white;
+}
+.board-meteo {
+    background-color: rgba(129, 109, 160, 0.445);
+    color: white;
+}
+.board-color {
+    background-color: rgba(122, 122, 122, 0.445);
+    color: white;
+}
+.caracteristique-color {
+    color: rgb(0, 0, 0);
+}
+.btn {
+    border-radius: 0px;
+}
+body {
+    background-color: rgb(44, 159, 163);
+    background-image: url('./images/field-3092043_1920.jpg');
+}
+
+/*rgb(44, 159, 163); couleur bleu bizarre
+/*rgb(170, 235, 86); coulor verte
+/*rgb(243, 198, 243); couleur rose
+/*rgb(55, 12, 209); couleur violette bizarre
