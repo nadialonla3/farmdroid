@@ -3,6 +3,7 @@ from django.db import models
 class Culture(models.Model):
     name = models.TextField()
     scientificName = models.TextField()
+    parameters = models.ManyToManyField(CultureParameters)
 
     def __str__(self):
         return self.name
@@ -15,12 +16,7 @@ class CultureParameters(models.Model):
     name = models.TextField()
     minValue= models.FloatField()
     maxValue= models.FloatField()
-    culture = models.ForeignKey(to=Culture, on_delete=models.SET_NULL, null=True)
     type = models.ForeignKey(to=Type, on_delete=models.SET_NULL, null=True)
-
-class ParamAttribution(models.Model):
-    culture = models.ForeignKey(to=Culture, on_delete=models.SET_NULL, null=True)
-    cultureParameters = models.ForeignKey(to=CultureParameters, on_delete=models.SET_NULL, null=True)
 
 class NoeudMaitre(models.Model):
     position = models.TextField()
