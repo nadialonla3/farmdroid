@@ -47,6 +47,12 @@ class Data(models.Model):
     culture = models.ForeignKey(to=Culture, on_delete=models.SET_NULL, null=True)
     sensor = models.ForeignKey(to=Sensor, on_delete=models.SET_NULL, null=True)
 
+class DataMean(models.Model):
+    value= models.FloatField()
+    date= models.DateTimeField()
+    type = models.ForeignKey(to=Type, on_delete=models.SET_NULL, null=True)
+    culture = models.ForeignKey(to=Culture, on_delete=models.SET_NULL, null=True)
+
 class Actuator(models.Model):
     name = models.TextField()
     gpsCoordinateX= models.FloatField()

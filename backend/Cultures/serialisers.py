@@ -59,6 +59,13 @@ class DataSerializer(serializers.ModelSerializer):
         model = Data
         fields = ['value', 'date', 'type', 'culture', 'sensor']
 
+class DataMeanSerializer(serializers.ModelSerializer):
+    type = TypeSerializer()
+    culture = serializers.StringRelatedField()
+    class Meta:
+        model = Data
+        fields = ['value', 'date', 'type', 'culture']
+
 class ActuatorSerializer(serializers.ModelSerializer):
     type = TypeSerializer()
     noeudCollecteur = serializers.StringRelatedField()
