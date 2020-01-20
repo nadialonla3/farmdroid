@@ -1,5 +1,5 @@
-from Cultures.models import *
-from Cultures.serialisers import *
+from .models import *
+from .serialisers import *
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
 
