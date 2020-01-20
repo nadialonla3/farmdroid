@@ -39,41 +39,6 @@ class DestroyActuatorHistory(generics.DestroyAPIView):
 
 
 
-# ****************************
-# * ACTUATOR VIEWS           *
-# ****************************
-
-class ListActuator(generics.ListAPIView):
-    permission_classes = [AllowAny]
-    serializer_class = ActuatorSerializer
-
-    def get_queryset(self):
-        return Actuator.objects.all()
-
-
-class RetrieveActuator(generics.RetrieveAPIView):
-    permission_classes = [AllowAny]
-    serializer_class = ActuatorSerializer
-
-    def get_queryset(self):
-        return Actuator.objects.all()
-
-
-class CreateActuator(generics.CreateAPIView):
-    permission_classes = [AllowAny]
-    serializer_class = ActuatorSerializer
-
-    def get_queryset(self):
-        return Actuator.objects.all()
-
-
-class DestroyActuator(generics.DestroyAPIView):
-    permission_classes = [AllowAny]
-    serializer_class = ActuatorSerializer
-
-    def get_queryset(self):
-        return Actuator.objects.all()
-
 
 
 # ****************************
@@ -310,40 +275,6 @@ class DestroyScheduledActuators(generics.DestroyAPIView):
 
     def get_queryset(self):
         return ScheduledActuators.objects.all()
-
-
-
-# ****************************
-# * SENSOR VIEWS             *
-# ****************************
-
-class ListSensor(generics.ListAPIView):
-    permission_classes = [AllowAny]
-    serializer_class= SensorSerializer
-
-    def get_queryset(self):
-        return Sensor.objects.all()
-
-class RetrieveSensor(generics.RetrieveAPIView):
-    permission_classes = [AllowAny]
-    serializer_class= SensorSerializer
-
-    def get_queryset(self):
-        return Sensor.objects.all()
-
-class CreateSensor(generics.CreateAPIView):
-    permission_classes = [AllowAny]
-    serializer_class= SensorSerializer
-
-    def get_queryset(self):
-        return Sensor.objects.all()
-
-class DestroySensor(generics.DestroyAPIView):
-    permission_classes = [AllowAny]
-    serializer_class= SensorSerializer
-
-    def get_queryset(self):
-        return Sensor.objects.all()
 
 
 
