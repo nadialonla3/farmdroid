@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import { SoilTemperatureService } from '../../services/soil-temperature.service';
+import { AirHumidityService } from '../../services/air-humidity.service';
+import { AirTemperatureService } from '../../services/air-temperature.service';
+import { LuminosityService } from '../../services/luminosity.service';
+import { Co2Service } from '../../services/co2.service';
+import { PhService } from '../../services/ph.service';
+import { PressureService } from '../../services/pressure.service';
+import { SoilHumidityService } from '../../services/soil-humidity.service';
 
 @Component({
   templateUrl: 'dashboard.component.html',
@@ -9,6 +17,18 @@ import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 export class DashboardComponent implements OnInit {
 
   radioModel: string = 'Month';
+
+  constructor(
+    // private soilTemperatureService : SoilTemperatureService,
+    // private airHumidityService : AirHumidityService,
+    // private airTemperatureService : AirTemperatureService,
+    // private co2Service : Co2Service,
+    // private luminosityService : LuminosityService,
+    // private phService : PhService,
+    // private pressureService : PressureService,
+    // private soilHumidityService : SoilHumidityService
+    )
+  {}
 
   // lineChart1
   public lineChart1Data: Array<any> = [
