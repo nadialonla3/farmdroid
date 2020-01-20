@@ -83,7 +83,7 @@ class ActuatorHistorySerializer(serializers.ModelSerializer):
         model = ActuatorHistory
         fields = ['date', 'actuator']
 
-class ScheduledActuatorSerializer(serializers.ModelSerializer):
+class ScheduledActuatorsSerializer(serializers.ModelSerializer):
     actuator = serializers.StringRelatedField()
     class Meta:
         model = ScheduledActuators
