@@ -4,11 +4,10 @@ from .models import *
 
 class CultureSerializer(serializers.ModelSerializer):
     parameters = serializers.StringRelatedField(many=True)
-    sensors = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Culture
-        fields = ['name', 'scientificName', 'parameters', 'sensors']
+        fields = ['name', 'scientificName', 'parameters']
 
 
 class TypeSerializer(serializers.ModelSerializer):
@@ -36,29 +35,22 @@ class NoeudMaitreSerializer(serializers.ModelSerializer):
 
 class NoeudCollecteurSerializer(serializers.ModelSerializer):
     noeudMaitre = serializers.StringRelatedField()
-    sensors = serializers.StringRelatedField(many=True)
     actuators = serializers.StringRelatedField(many=True)
+    parameters = CultureParametersSerializer(many=True, read_only=True)
+    culture = serializers.StringRelatedField()
+
     class Meta:
         model = NoeudCollecteur
-        fields = ['position', 'topic', 'noeudMaitre', 'sensors', 'actuators']
+        fields = ['position', 'topic', 'noeudMaitre', 'status', 'culture', 'parameters' ]
 
-
-class SensorSerializer(serializers.ModelSerializer):
-    valueTtype = TypeSerializer()
-    culture = CultureSerializer()
-    noeudCollecteur = serializers.StringRelatedField()
-    class Meta:
-        model = Sensor
-        fields = ['gpsCoordinateX', 'gpsCoordinateY',
-                  'status', 'valueType', 'culture', 'noeudCollecteur']
 
 class DataSerializer(serializers.ModelSerializer):
     valueType = TypeSerializer()
     culture = serializers.StringRelatedField()
-    sensor = serializers.StringRelatedField()
+    noeudCollecteur = serializers.StringRelatedField()
     class Meta:
         model = Data
-        fields = ['value', 'date', 'valueType', 'culture', 'sensor']
+        fields = ['value', 'date', 'valueType', 'culture', 'noeudCollecteur']
 
 class DataMeanSerializer(serializers.ModelSerializer):
     valueType = TypeSerializer()
@@ -67,24 +59,15 @@ class DataMeanSerializer(serializers.ModelSerializer):
         model = Data
         fields = ['value', 'date', 'valueType', 'culture']
 
-class ActuatorSerializer(serializers.ModelSerializer):
-    valueType = TypeSerializer()
-    noeudCollecteur = serializers.StringRelatedField()
-    history = serializers.StringRelatedField(many=True)
-    scheduled = serializers.StringRelatedField(many=True)
-
-    class Meta:
-        model = Actuator
-        fields = ['name', 'gpsCoordinateX', 'gpsCoordinateY', 'status', 'valueType', 'noeudCollecteur', 'history']
 
 class ActuatorHistorySerializer(serializers.ModelSerializer):
-    actuator = serializers.StringRelatedField()
+    noeudCollecteur = serializers.StringRelatedField()
     class Meta:
         model = ActuatorHistory
-        fields = ['date', 'actuator']
+        fields = ['date', 'action', 'noeudCollecteur']
 
-class ScheduledActuatorSerializer(serializers.ModelSerializer):
-    actuator = serializers.StringRelatedField()
+class ScheduledActuatorsSerializer(serializers.ModelSerializer):
+    noeudCollecteur = serializers.StringRelatedField()
     class Meta:
         model = ScheduledActuators
-        fields = ['date', 'repeatInterval', 'timestamp', 'actuator']
+        fields = ['date', 'repeatInterval', 'timestamp', 'action', 'noeudCollecteur']

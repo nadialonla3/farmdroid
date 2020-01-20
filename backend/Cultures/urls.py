@@ -1,6 +1,6 @@
 from django.urls import path
 from django.conf.urls import url, include
-from .views.dataViews import *
+from .views import *
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
