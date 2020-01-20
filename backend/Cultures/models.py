@@ -35,7 +35,7 @@ class NoeudCollecteur(models.Model):
 class Data(models.Model):
     value= models.FloatField()
     date= models.DateTimeField()
-    parameter = models.ForeignKey(to=Type, on_delete=models.SET_NULL, null=True)
+    parameter = models.ForeignKey(to=CultureParameters, on_delete=models.SET_NULL, null=True)
     culture = models.ForeignKey(to=Culture, on_delete=models.SET_NULL, null=True)
     noeudCollecteur = models.ForeignKey(to=NoeudCollecteur, on_delete=models.SET_NULL, null=True)
 

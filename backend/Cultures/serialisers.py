@@ -18,8 +18,6 @@ class TypeSerializer(serializers.ModelSerializer):
 
 class CultureParametersSerializer(serializers.ModelSerializer):
     valueType = TypeSerializer()
-    culture = CultureSerializer()
-
     class Meta:
         model = CultureParameters
         fields = ['name', 'minValue', 'maxValue', 'valueType']
@@ -45,12 +43,12 @@ class NoeudCollecteurSerializer(serializers.ModelSerializer):
 
 
 class DataSerializer(serializers.ModelSerializer):
-    valueType = TypeSerializer()
+    parameter = CultureParametersSerializer()
     culture = serializers.StringRelatedField()
     noeudCollecteur = serializers.StringRelatedField()
     class Meta:
         model = Data
-        fields = ['value', 'date', 'valueType', 'culture', 'noeudCollecteur']
+        fields = ['value', 'date', 'parameter', 'culture', 'noeudCollecteur']
 
 class DataMeanSerializer(serializers.ModelSerializer):
     valueType = TypeSerializer()

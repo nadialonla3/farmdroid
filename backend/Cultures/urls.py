@@ -4,12 +4,13 @@ from .views import *
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    path("cultures/data/<parameter>/<int:pk>",
+    path("cultures/data1/<int:pk>",
          RetrieveData.as_view(), name='post-rud'),
-    path("cultures/dataMean/<parameter>/<int:pk>",
+    path("cultures/dataMean/<int : parameter>/<int:pk>",
          RetrieveDataMean.as_view(), name='post-rud'),
-    path("cultures/dataMean/<parameter>/<date1>/<date2>",
+    path("cultures/dataMean/<int : parameter>",
          ListDataMean.as_view(), name='post-rud'),
-    path("cultures/data/<parameter>/<date1>/<date2>",
-         ListData.as_view(), name='post-rud'),
+    path("cultures/data",
+         ListData.as_view(), name='data'),
 ]
+# /<int:pk>

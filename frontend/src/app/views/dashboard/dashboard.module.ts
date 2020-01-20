@@ -35,4 +35,5 @@ import {SoilTemperatureService} from '../../services/soil-temperature.service';
     SoilTemperatureService,
   ]
 })
-export class DashboardModule { }
+export class DashboardModule{
+ }

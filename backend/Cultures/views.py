@@ -82,6 +82,7 @@ class DestroyCultureParameters(generics.DestroyAPIView):
 class ListCulture(generics.ListAPIView):
     permission_classes = [AllowAny]
     serializer_class= CultureSerializer
+    lookup_field='pk'
 
     def get_queryset(self):
         return Culture.objects.all()
@@ -116,25 +117,26 @@ class DestroyCulture(generics.DestroyAPIView):
 class RetrieveData(generics.RetrieveAPIView):
     permission_classes = [AllowAny]
     serializer_class= DataSerializer
-    filter_class=Data
+    lookup_field='pk'
+    # filter_class=Data
 
     def get_queryset(self):
         parameter = self.request.query_params.get('parameter', None)
 
         queryset= Data.objects.all()
-        queryset=queryset.filter(type__name=parameter)
+        # queryset=queryset.filter(parameter__name=parameter)
         return queryset
 
-class ListData(generics.RetrieveAPIView):
+class ListData(generics.ListAPIView):
     permission_classes = [AllowAny]
     serializer_class= DataSerializer
 
     def get_queryset(self):
-        parameter = self.request.query_params.get('parameter', None)
+        # parameter = self.request.query_params.get('parameter', None)
 
-        queryset= Data.objects.all()
-        queryset=queryset.filter(type__name=parameter)
-        return queryset
+        # queryset= 
+        # queryset=queryset.filter(parameter__name=parameter)
+        return Data.objects.all()
 
 class RetrieveDataMean(generics.RetrieveAPIView):
     permission_classes = [AllowAny]
@@ -145,7 +147,7 @@ class RetrieveDataMean(generics.RetrieveAPIView):
         parameter = self.request.query_params.get('parameter', None)
 
         queryset= Data.objects.all()
-        queryset=queryset.filter(type__name=parameter)
+        queryset=queryset.filter(parameter__name=parameter)
         return queryset
 
 class ListDataMean(generics.ListAPIView):
@@ -157,7 +159,7 @@ class ListDataMean(generics.ListAPIView):
         parameter = self.request.query_params.get('parameter', None)
 
         queryset= Data.objects.all()
-        queryset=queryset.filter(type__name=parameter)
+        queryset=queryset.filter(parameter__name=parameter)
         return queryset
 
 class CreateData(generics.CreateAPIView):
