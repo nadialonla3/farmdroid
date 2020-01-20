@@ -32,11 +32,16 @@ class CulturesConfig(AppConfig):
         master.save()
 
         collector1 = NoeudCollecteur(
-            position='apostiion', topic='sensor/temp', noeudMaitre=master)
+            position='apostiion', topic='sensor/temp', noeudMaitre=master, culture=culture1, status=1)
         collector2 = NoeudCollecteur(
-            position='aposition', topic='sensor/temp', noeudMaitre=master)
+            position='aposition', topic='sensor/temp', noeudMaitre=master, culture=culture2, status=1)
+
         collector1.save()
         collector2.save()
+
+        collector1.parameters.add(parameter1)
+        collector1.parameters.add(parameter2)
+        collector2.parameters.add(parameter3)
 
         print('Parameters saved')
         return super().ready()
