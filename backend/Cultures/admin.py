@@ -5,7 +5,6 @@ from .models import *
 admin.site.register(Culture)
 admin.site.register(Type)
 admin.site.register(CultureParameters)
-admin.site.register(ParamAttribution)
 admin.site.register(NoeudMaitre)
 admin.site.register(NoeudCollecteur)
 admin.site.register(Sensor)
