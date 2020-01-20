@@ -13,7 +13,7 @@ export const navItems: INavData[] = [
   {
     name: 'Details',
     url: '/details',
-    icon: 'icon-speedometer',
+    icon: 'icon-plus',
     badge: {
       variant: 'info',
       text: '',
@@ -28,19 +28,19 @@ export const navItems: INavData[] = [
       text: '',
     }
   },
-  {
-    name: 'Charts',
-    url: '/charts',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: '',
-    }
-  },
+  // {
+  //   name: 'Charts',
+  //   url: '/charts',
+  //   icon: 'icon-speedometer',
+  //   badge: {
+  //     variant: 'info',
+  //     text: '',
+  //   }
+  // },
   {
     name: 'Profil',
     url: '/profil',
-    icon: 'icon-speedometer',
+    icon: 'icon-user',
     badge: {
       variant: 'info',
       text: '',
@@ -49,7 +49,7 @@ export const navItems: INavData[] = [
   {
     name: 'Settings',
     url: '/settings',
-    icon: 'icon-speedometer',
+    icon: 'icon-settings',
     badge: {
       variant: 'info',
       text: '',
