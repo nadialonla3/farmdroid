@@ -3,43 +3,6 @@ from .serialisers import *
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
 
-# ****************************
-# * ACTUATOR history VIEWS   *
-# ****************************
-
-class ListActuatorHistory(generics.ListAPIView):
-    permission_classes = [AllowAny]
-    serializer_class = ActuatorHistorySerializer
-
-    def get_queryset(self):
-        return ActuatorHistory.objects.all()
-
-class RetrieveActuatorHistory(generics.RetrieveAPIView):
-    permission_classes = [AllowAny]
-    serializer_class = ActuatorHistorySerializer
-
-    def get_queryset(self):
-        return ActuatorHistory.objects.all()
-
-
-class CreateActuatorHistory(generics.CreateAPIView):
-    permission_classes = [AllowAny]
-    serializer_class = ActuatorHistorySerializer
-
-    def get_queryset(self):
-        return ActuatorHistory.objects.all()
-
-
-class DestroyActuatorHistory(generics.DestroyAPIView):
-    permission_classes = [AllowAny]
-    serializer_class = ActuatorHistorySerializer
-
-    def get_queryset(self):
-        return ActuatorHistory.objects.all()
-
-
-
-
 
 # ****************************
 # * Culture paramter VIEWS   *
@@ -192,6 +155,7 @@ class ListNoeudCollecteur(generics.ListAPIView):
 class RetrieveNoeudCollecteur(generics.RetrieveAPIView):
     permission_classes = [AllowAny]
     serializer_class= NoeudCollecteurSerializer
+    lookup_field='pk'
 
     def get_queryset(self):
         return NoeudCollecteur.objects.all()

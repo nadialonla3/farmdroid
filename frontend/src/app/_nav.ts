@@ -20,8 +20,8 @@ export const navItems: INavData[] = [
     }
   },
   {
-    name: 'Tank State',
-    url: '/tank',
+    name: 'History',
+    url: '/history',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
@@ -38,8 +38,8 @@ export const navItems: INavData[] = [
   //   }
   // },
   {
-    name: 'Profil',
-    url: '/profil',
+    name: 'Notifications',
+    url: '/notifications',
     icon: 'icon-user',
     badge: {
       variant: 'info',

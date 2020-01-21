@@ -6,14 +6,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import {AirHumidityService} from '../../services/air-humidity.service';
-import {AirTemperatureService} from '../../services/air-temperature.service';
-import {Co2Service} from '../../services/co2.service';
-import {LuminosityService} from '../../services/luminosity.service';
-import {PhService} from '../../services/ph.service';
-import {PressureService} from '../../services/pressure.service';
-import {SoilHumidityService} from '../../services/soil-humidity.service';
-import {SoilTemperatureService} from '../../services/soil-temperature.service';
+import { DatabaseService } from './../../service/database.service';
 
 @NgModule({
   imports: [
@@ -25,14 +18,7 @@ import {SoilTemperatureService} from '../../services/soil-temperature.service';
   ],
   declarations: [ DashboardComponent ],
   providers: [
-    AirHumidityService,
-    AirTemperatureService,
-    Co2Service,
-    LuminosityService,
-    PhService,
-    PressureService,
-    SoilHumidityService,
-    SoilTemperatureService,
+    DatabaseService
   ]
 })
 export class DashboardModule{

@@ -52,11 +52,27 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'Cultures.middleware.corsMiddleware'
 ]
 
 ROOT_URLCONF = 'farmdroid.urls'
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:4200",
+]
+CORS_ORIGIN_REGEX_WHITELIST = [
+    "http://localhost:4200",
+]
 
 TEMPLATES = [
     {

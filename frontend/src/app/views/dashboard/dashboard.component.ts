@@ -1,14 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
-import { SoilTemperatureService } from '../../services/soil-temperature.service';
-import { AirHumidityService } from '../../services/air-humidity.service';
-import { AirTemperatureService } from '../../services/air-temperature.service';
-import { LuminosityService } from '../../services/luminosity.service';
-import { Co2Service } from '../../services/co2.service';
-import { PhService } from '../../services/ph.service';
-import { PressureService } from '../../services/pressure.service';
-import { SoilHumidityService } from '../../services/soil-humidity.service';
+import { DatabaseService } from './../../service/database.service';
 
 @Component({
   templateUrl: 'dashboard.component.html',
@@ -17,8 +10,6 @@ import { SoilHumidityService } from '../../services/soil-humidity.service';
 export class DashboardComponent implements OnInit {
 
   radioModel: string = 'Month';
-  @Input() ActualPh : string[];
-  @Input() test : number;
 
   constructor(
     // private soilTemperatureService : SoilTemperatureService,
@@ -26,7 +17,7 @@ export class DashboardComponent implements OnInit {
     // private airTemperatureService : AirTemperatureService,
     // private co2Service : Co2Service,
     // private luminosityService : LuminosityService,
-    public phService : PhService,
+    public databaseService : DatabaseService,
     // private pressureService : PressureService,
     // private soilHumidityService : SoilHumidityService
     )
@@ -34,15 +25,12 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     // generate random values for mainChart
-    this.test=2
+    
     for (let i = 0; i <= this.mainChartElements; i++) {
       this.mainChartData1.push(this.random(50, 200));
       this.mainChartData2.push(this.random(80, 100));
       this.mainChartData3.push(65);
     }
-    this.phService.ngOnInit();
-    this.ActualPh=["tesr","hdqj"]
-    this.ActualPh=this.phService.values;
   }
 
   // lineChart1

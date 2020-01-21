@@ -1,6 +1,6 @@
 <div class="animated fadeIn">
   <div class="row">
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
       <div class="card">
         <div class="card-header">
           <strong>Bootstrap Alerts</strong>
@@ -63,23 +63,38 @@
           </alert>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
-          <strong>Alerts</strong> <small>dismissing</small>
+          <strong>Alerts</strong>
         </div>
         <div class="card-body">
           <div *ngFor="let alert of alerts">
             <alert [type]="alert.type" [dismissible]="dismissible">{{ alert.msg }}</alert>
           </div>
-          <button type="button" class="btn btn-primary" (click)="dismissible = !dismissible">Toggle dismissible</button>
+          <button type="button" class="btn btn-primary" (click)="dismissible = !dismissible">View Evolution</button>
+          <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <strong>Effectors Alerts</strong> 
+          <!-- <small>dismissing</small> -->
+        </div>
+        <div class="card-body">
+          <div *ngFor="let alert of alertsHtml">
+            <alert [type]="alert.type" [dismissible]="dismissible">{{ alert.msg }}</alert>
+          </div>
           <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
@@ -178,5 +193,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>

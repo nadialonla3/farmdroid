@@ -40,6 +40,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { DetailsModule } from './views/details/details.module';
+import { HistoryModule } from './views/history/history.module';
 
 @NgModule({
   imports: [
@@ -57,6 +58,7 @@ import { DetailsModule } from './views/details/details.module';
     ChartsModule,
     HttpClientModule,
     DetailsModule,
+    HistoryModule,
   ],
   declarations: [
     AppComponent,

@@ -33,31 +33,31 @@ export class AlertsComponent {
   dismissible = true;
   alerts: any = [
     {
-      type: 'success',
-      msg: `You successfully read this important alert message.`
+      type: 'danger',
+      msg: `La temperature de l'air est en dessous de 25°C.`
     },
     {
       type: 'info',
-      msg: `This alert needs your attention, but it's not super important.`
+      msg: `Le PH du sol diminue dangeureusement`
     },
     {
       type: 'danger',
-      msg: `Better check yourself, you're not looking too good.`
+      msg: `La temperature du noeud1 est en dessous de 25°C.`
     }
   ];
 
   alertsHtml: any = [
     {
       type: 'success',
-      msg: `<strong>Well done!</strong> You successfully read this important alert message.`
+      msg: ` Votre arrosage a l'eau du 10-03-2020 a 10h35 s'est bien effectuee.`
     },
     {
-      type: 'info',
-      msg: `<strong>Heads up!</strong> This alert needs your attention, but it's not super important.`
+      type: 'success',
+      msg: ` Votre arrosage a l'eau fertilise du 10-03-2020 a 10h50 s'est bien effectuee.`
     },
     {
       type: 'danger',
-      msg: `<strong>Warning!</strong> Better check yourself, you're not looking too good.`
+      msg: `Votre arrosage du 11-03-2020 a 13h35 a echoue.`
     }
   ];
 

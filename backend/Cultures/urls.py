@@ -12,5 +12,8 @@ urlpatterns = [
          ListDataMean.as_view(), name='post-rud'),
     path("cultures/data",
          ListData.as_view(), name='data'),
+     
+     path("cultures/noeudMaitre", 
+          ListNoeudMaitre.as_view(), name='masternode'),
 ]
 # /<int:pk>
