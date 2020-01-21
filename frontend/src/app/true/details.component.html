@@ -1,0 +1,153 @@
+<div class="row" style = "margin-left:10px; margin-top:10px;">
+    <div class="col-2">
+        <app-sidebar #appSidebar style = "background-color:rgb(39, 98, 175);" [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized" (minimizedChange)="toggleMinimize($event)">
+            <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="appSidebar.minimized"></app-sidebar-nav>
+        </app-sidebar>
+    </div>
+    <div class="animated fadeIn col-10">
+        <div class="row" id='temperature_sol'>
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header text-center">
+                <h4>soil temperature sensors</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                <div class='col-2'></div>
+                <div class="col-7 text-center" style="height:400px; background-color:rgb(159, 184, 49); padding:10px; margin-left:15px;">
+                    <h5>soil temperature graph of ordinary node 1</h5>
+                    <!--composant de awoufack pour le premier capteur-->
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row" id='humidite_sol'>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header text-center">
+                  <h4>Soil pressure sensors</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+                <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                    <div class='col-2'></div>
+                    <div class="col-7 offset-3 text-center" style="height:400px; background-color:rgb(159, 184, 49); padding:10px; margin-left:15px;">
+                        <h5>soil pressure graph of the ordinary node {{numero_noeud_ordinaire}}</h5>
+                        <!--composant de awoufack pour le premier capteur-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id='ph'>
+            <div class="col-12" >
+              <div class="card">
+                <div class="card-header text-center">
+                  <h4>Sensors ph</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+                <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                    <div class='col-2'></div>
+                    <div class="col-7 offset-3 text-center" style="height:400px; background-color:rgb(159, 184, 49); padding:10px; margin-left:15px;">
+                        <h5>ordinary node ph graph {{numero_noeud_ordinaire}}</h5>
+                        <!--composant de awoufack pour le premier capteur-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id='co2'>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header text-center">
+                  <h4>Sensor of CO2</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+                <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                    <div class='col-2'></div>
+                    <div class="col-7 offset-3 text-center" style="height:400px; background-color:rgb(159, 184, 49); padding:10px; margin-left:15px;">
+                        <h5>CO2 graph of the ordinary node {{numero_noeud_ordinaire}}</h5>
+                        <!--composant de awoufack pour le premier capteur-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id='temperature_air'>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header text-center">
+                  <h4>Air temperature sensors</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+                <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                    <div class='col-2'></div>
+                    <div class="col-7 offset-3 text-center" style="height:400px; background-color:rgb(159, 184, 49); padding:10px; margin-left:15px;">
+                        <h5>air temperature graph of the ordinary node {{numero_noeud_ordinaire}}</h5>
+                        <!--composant de awoufack pour le premier capteur-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id='humidite_air'>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header text-center">
+                  <h4>Air humidity sensors</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+                <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                    <div class='col-2'></div>
+                    <div class="col-7 offset-3 text-center" style="height:400px; background-color:rgb(159, 184, 49); padding:10px; margin-left:15px;">
+                        <h5>soil humidity graph of the ordinary node {{numero_noeud_ordinaire}}</h5>
+                        <!--composant de awoufack pour le premier capteur-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id='luminosite'>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header text-center">
+                  <h4>luminosity Sensor</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+                <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                    <div class='col-2'></div>
+                    <div class="col-7 offset-3 text-center" style="height:400px; background-color:rgb(159, 184, 49); padding:10px; margin-left:15px;">
+                        <h5>luminosity graph of the ordinary node {{numero_noeud_ordinaire}}</h5>
+                        <!--composant de awoufack pour le premier capteur-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id='pression'>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header text-center">
+                  <h4>Pressure sensors</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+                <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                    <div class='col-2'></div>
+                    <div class="col-7 offset-3 text-center" style="height:400px; background-color:rgb(159, 184, 49); padding:10px; margin-left:15px;">
+                        <h5>ordinary node pressure graph {{numero_noeud_ordinaire}}</h5>
+                        <!--composant de awoufack pour le premier capteur-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

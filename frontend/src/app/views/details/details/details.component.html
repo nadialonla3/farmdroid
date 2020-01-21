@@ -1,0 +1,171 @@
+
+<div class="row" style = "margin-top:10px;">
+    <div class="col-2">
+        <app-sidebar #appSidebar style = "background-color:rgb(65, 179, 214); height:4900px; " [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized" (minimizedChange)="toggleMinimize($event)">
+            <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="appSidebar.minimized"></app-sidebar-nav>
+        </app-sidebar>
+    </div>
+    <div class='col-10'>
+        <div class='row'>
+            <div class='col-9'>
+                <div class="card" style='height:4900px; margin-left:40px'>
+                    <h5 class="card-header text-center" style='height:55px;'>Sensors</h5>
+                    <div class="card-body">
+                        <div class="animated fadeIn col-10">
+                            <div class="row" id='temperature_sol'>
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header text-center">
+                                            <h4>soil temperature sensors</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                                    <div class='col-2'></div>
+                                    <div class="col-7 text-center" style="height:400px; padding:10px; margin-left:15px;">
+                                        <app-line-chart [graphTitle]="graph1" [colors]="color1" [tabX]="tabX1" [tabY]="tabY1"></app-line-chart>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row" id='humidite_sol'>
+                                <div class="col-12">
+                                    <div class="card">
+                                    <div class="card-header text-center">
+                                        <h4>Soil pressure sensors</h4>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                                        <div class='col-2'></div>
+                                        <div class="col-7 offset-3 text-center" style="height:400px; padding:10px; margin-left:15px;">
+                                            <app-line-chart [graphTitle]="graph2" [colors]="color2" [tabX]="tabX2" [tabY]="tabY2"></app-line-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id='ph'>
+                                <div class="col-12" >
+                                    <div class="card">
+                                    <div class="card-header text-center">
+                                        <h4>Sensors ph</h4>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                                        <div class='col-2'></div>
+                                        <div class="col-7 offset-3 text-center" style="height:400px; padding:10px; margin-left:15px;">
+                                            <app-line-chart [graphTitle]="graph3" [colors]="color3" [tabX]="tabX3" [tabY]="tabY3"></app-line-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id='co2'>
+                                <div class="col-12">
+                                    <div class="card">
+                                    <div class="card-header text-center">
+                                        <h4>Sensor of CO2</h4>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                                        <div class='col-2'></div>
+                                        <div class="col-7 offset-3 text-center" style="height:400px; padding:10px; margin-left:15px;">
+                                            <app-line-chart [graphTitle]="graph4" [colors]="color4" [tabX]="tabX4" [tabY]="tabY4"></app-line-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id='temperature_air'>
+                                <div class="col-12">
+                                    <div class="card">
+                                    <div class="card-header text-center">
+                                        <h4>Air temperature sensors</h4>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                                        <div class='col-2'></div>
+                                        <div class="col-7 offset-3 text-center" style="height:400px; padding:10px; margin-left:15px;">
+                                            <app-line-chart [graphTitle]="graph5" [colors]="color5" [tabX]="tabX5" [tabY]="tabY5"></app-line-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id='humidite_air'>
+                                <div class="col-12">
+                                    <div class="card">
+                                    <div class="card-header text-center">
+                                        <h4>Air humidity sensors</h4>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                                        <div class='col-2'></div>
+                                        <div class="col-7 offset-3 text-center" style="height:400px; padding:10px; margin-left:15px;">
+                                            <app-line-chart [graphTitle]="graph6" [colors]="color6" [tabX]="tabX6" [tabY]="tabY6"></app-line-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id='luminosite'>
+                                <div class="col-12">
+                                    <div class="card">
+                                    <div class="card-header text-center">
+                                        <h4>Luminosity Sensor</h4>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                                        <div class='col-2'></div>
+                                        <div class="col-7 offset-3 text-center" style="height:400px; padding:10px; margin-left:15px;">
+                                            <app-line-chart [graphTitle]="graph7" [colors]="color7" [tabX]="tabX7" [tabY]="tabY7"></app-line-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id='pression'>
+                                <div class="col-12">
+                                    <div class="card">
+                                    <div class="card-header text-center">
+                                        <h4>Pressure sensors</h4>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class='row' style="margin-bottom:60px; margin-top:40px;">
+                                        <div class='col-2'></div>
+                                        <div class="col-7 offset-3 text-center" style="height:400px; padding:10px; margin-left:15px;">
+                                            <app-line-chart [graphTitle]="graph8" [colors]="color8" [tabX]="tabX8" [tabY]="tabY8"></app-line-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+            <div class='col-3'>
+                <div class="card" style='height:4900px;' >
+                    <h5 class="card-header text-center" style='height:55px;'>Actuators</h5>
+                    <div class="card-body">
+                      <div style='height:50px;'>
+                        <a href="#" class="btn btn-primary btn-block text-center">sprinkle with water</a>
+                      </div>
+                      <div style='height:50px;'>
+                        <a href="#" class="btn btn-primary btn-block text-center">sprinkle with fertilized water</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

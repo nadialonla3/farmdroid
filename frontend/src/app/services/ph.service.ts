@@ -24,7 +24,6 @@ export class PhService implements OnInit{
     headers: {
       'Content-Type': 'application/json',
       'mode': 'no-cors',
-      'Access-Control-Allow-Origin': '*',
     }
   });
 

@@ -20,6 +20,14 @@ export const routes: Routes = [
       title: 'Login Page'
     }
   },
+  // {
+  //   path: 'details',
+  //   component: DetailsComponent,
+  //   data: {
+  //     title: 'details Page'
+  //   }
+  // },
+  
   {
     path: 'Profil',
     component: RegisterComponent,
@@ -53,6 +61,10 @@ export const routes: Routes = [
       {
         path: 'icons',
         loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
+      },
+      {
+        path: 'details',
+        loadChildren: () => import('./views/details/details.module').then(m => m.DetailsModule)
       },
       {
         path: 'notifications',
